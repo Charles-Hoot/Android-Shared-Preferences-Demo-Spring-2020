@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 nickname = inputET.getText().toString();
                 TextView resultTV = findViewById(R.id.resultTV);
                 resultTV.setText("Nickname is:"+nickname);
+
+                SharedPreferences.Editor editSP = getPreferences(0).edit();
+                editSP.putString("nickname", nickname);
+                editSP.commit();
             }
         });
     }
